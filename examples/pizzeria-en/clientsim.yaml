@@ -1,0 +1,21 @@
+# Example: the website chat assistant of a (fictional) pizzeria.
+# Run from this folder:  clientsim run -n 30 --budget 3
+business: >
+  "Luigi's Corner" (fictional), a family pizzeria in Austin, Texas. Open Tuesday to Sunday, 11am-10pm. Dine-in,
+  takeout and delivery within 3 miles (fee $3.99, free over $35). Pizzas $12-$22, gluten-free crust +$3, no vegan
+  cheese. Customers chat on the website to order, book a table or ask about allergies.
+
+target:
+  kind: anthropic
+  model: claude-sonnet-5-5
+  system_prompt_file: bot_prompt.md
+  max_tokens: 4000
+  effort: low
+  handoff_marker: "[HUMAN]"
+
+language: en
+personas_extra: >
+  About 10% write in Spanish. Some have serious food allergies; some are angry about a late delivery.
+max_words: 70
+conversations: 30
+budget_usd: 3

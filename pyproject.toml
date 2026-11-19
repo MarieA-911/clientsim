@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clientsim"
+version = "0.1.0"
+description = "Test your AI chatbot against hundreds of simulated customers before your real ones do."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "JustiLoi SAS", email = "contact@justiloi.com" }]
+requires-python = ">=3.10"
+dependencies = ["anthropic>=0.70", "pyyaml>=6"]
+keywords = ["chatbot", "testing", "evals", "llm", "whatsapp", "claude", "customer-service", "simulation"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Communications :: Chat",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/MarieA-911/clientsim"
+"Made by" = "https://www.justiloi.com"
+
+[project.scripts]
+clientsim = "clientsim.cli:main"
+
+[tool.setuptools]
+packages = ["clientsim"]

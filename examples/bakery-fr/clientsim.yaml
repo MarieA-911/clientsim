@@ -1,0 +1,24 @@
+# Exemple : l'assistant WhatsApp d'une boulangerie (fictive) en Guadeloupe.
+# Lancer depuis ce dossier :  clientsim run -n 30 --budget 3
+business: >
+  Boulangerie-pâtisserie « Pain Doré » (fictive), au Gosier, en Guadeloupe. Ouverte du mardi au dimanche, 6 h - 13 h
+  et 15 h 30 - 19 h, fermée le lundi. Pain, viennoiseries, gâteaux d'anniversaire sur commande (48 h à l'avance,
+  à partir de 25 €), pain au beurre, tourments d'amour le week-end. Les clients écrivent sur WhatsApp pour commander,
+  connaître les horaires ou les prix.
+
+target:
+  kind: anthropic
+  model: claude-sonnet-5-5
+  system_prompt_file: bot_prompt.md
+  max_tokens: 4000            # essayez 400 : la réflexion du modèle peut tout consommer, et le robot reste muet
+  effort: low
+  handoff_marker: "[HUMAIN]"
+
+language: fr
+personas_extra: >
+  Environ 10 % des clients écrivent en créole guadeloupéen. Certains sont des touristes qui écrivent en français
+  approximatif ou en anglais.
+max_words: 60
+max_turns: 6
+conversations: 30
+budget_usd: 3
